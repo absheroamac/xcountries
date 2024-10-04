@@ -21,7 +21,7 @@ function App() {
         throw new Error(`Unable to fetch data, status code ${res.status}`);
       }
     } catch (err) {
-      console.error("Fetch error:", err);  // This is the message being tested
+      console.log("Fetch error:", err);
     }
 
   }
@@ -32,7 +32,7 @@ function App() {
 
   },[])
 
-  
+
   return (
     <div className="App">
       <div className='grid-container'>
