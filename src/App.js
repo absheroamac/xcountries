@@ -21,12 +21,15 @@ function App() {
         setData(data);
         
       }
+      else{
+        
+      }
 
 
     }
     catch(err){
 
-      console.log("API Error " + err);
+      console.error("Fetch error " + err);
 
     }
 
