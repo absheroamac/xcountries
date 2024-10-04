@@ -13,30 +13,16 @@ function App() {
 
       const res = await fetch("https://xcountries-backend.azurewebsites.net/all");
 
-      if(res.status===200){
-
-        const data = await res.json()
-        console.log(data);
-
+      if (res.status === 200) {
+        const data = await res.json();
         setData(data);
-        
-      }
-      else{
+      } else {
         console.error(`Unable to fetch data, status code ${res.status}`);
         throw new Error(`Unable to fetch data, status code ${res.status}`);
-        
-
       }
-
-
+    } catch (err) {
+      console.error("Fetch error:", err);  // This is the message being tested
     }
-    catch(err){
-
-      console.error("Fetch error:", err);
-
-    }
-
-
 
   }
 
@@ -45,6 +31,8 @@ function App() {
 
 
   },[])
+
+  
   return (
     <div className="App">
       <div className='grid-container'>
