@@ -47,7 +47,7 @@ function App() {
         data.map((element)=>(
 
           <div className='card'>
-            <img src={element.flag} alt={`Flag of element.name`}/>
+            <img src={element.flag} alt={`Flag of ${element.name}`}/>
             <h2>{element.name}</h2>
           </div>
 
