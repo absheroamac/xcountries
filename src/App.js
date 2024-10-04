@@ -22,14 +22,17 @@ function App() {
         
       }
       else{
+        console.error(`Unable to fetch data, status code ${res.status}`);
+        throw new Error(`Unable to fetch data, status code ${res.status}`);
         
+
       }
 
 
     }
     catch(err){
 
-      console.error("Fetch error " + err);
+      console.error("Fetch error:", err);
 
     }
 
