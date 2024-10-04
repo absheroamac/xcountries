@@ -2,11 +2,15 @@
 .app{
   width: 100%;
   box-sizing: border-box;
+  
+  
 }
 .grid-container{
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
 }
 
