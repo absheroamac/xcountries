@@ -11,12 +11,14 @@ function App() {
 
     try{
 
-      const res = await axios.get("https://xcountries-backend.azurewebsites.net/all");
+      const res = await fetch("https://xcountries-backend.azurewebsites.net/all");
 
       if(res.status===200){
-        console.log(res.data);
 
-        setData(res.data);
+        const data = await res.json()
+        console.log(data);
+
+        setData(data);
         
       }
 
@@ -24,9 +26,7 @@ function App() {
     }
     catch(err){
 
-      if(err.response){
-        console.log(err.response.data);
-      }
+      console.log("API Error " + err);
 
     }
 
@@ -47,7 +47,7 @@ function App() {
         data.map((element)=>(
 
           <div className='card'>
-            <img src={element.flag} alt={element.alt}/>
+            <img src={element.flag} alt={`Flag of element.name`}/>
             <h2>{element.name}</h2>
           </div>
 
